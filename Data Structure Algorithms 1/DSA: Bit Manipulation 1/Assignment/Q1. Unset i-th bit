@@ -1,11 +1,5 @@
 Q1. Unset i-th bit
-Solved
-feature icon
-Get your doubts resolved blazing fast with Chat GPT Help
-Check Chat GPT
-feature icon
-Using hints except Complete Solution is Penalty free now
-Use Hint
+
 Problem Description
 You are given two integers A and B.
 If B-th bit in A is set, make it unset.
