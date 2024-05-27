@@ -1,0 +1,74 @@
+Problem Description
+Given a Dynamic Array A.
+Create a Dynamic Array that has all Unique elements from the given Array.
+Sort the created Array in non-decreasing order and return the sorted Array.
+
+Note :
+1. You can sort Array using the inbuilt function.
+2. About Dynamic Array
+In JAVA: ArrayList is Dynamic Array.
+In Python: List is a Dynamic Array
+In C++: vector is a Dynamic Array.
+
+
+Problem Constraints
+0 < A.size() <= 1000
+-100000 <= A.get(i) <= 100000
+
+
+Input Format
+Single Argument A which is Dynamic Array of Integer.
+
+
+Output Format
+Return Sorted Dynamic Array which have of all unique numbers.
+
+
+Example Input
+Input 1 :
+A : [8 54 79 62 33 59 14 8 20 27 33 54]
+
+Input 2 :
+A : [31 38 36 45 48 47 44 26 31 45]
+
+
+Example Output
+Output 1 :
+14 20 27 59 62 79
+
+Output 2 :
+26 36 38 44 47 48
+
+
+Example Explanation
+Explanation 1 :
+Array is [8 54 79 62 33 59 14 8 20 27 33 54],
+Unique elements in Array are: 79 62 59 14 20 27
+Sorted form: 14 20 27 59 62 79
+
+Explanation 2 :
+Array is [31 38 36 45 48 47 44 26 31 45],
+Unique elements in Array are: 38 36 48 47 44 26
+Sorted form: 26 36 38 44 47 48
+-----------------------------------------------------------
+public class Solution {
+    public ArrayList<Integer> solve(ArrayList<Integer> A) {
+        int n=A.size();
+        ArrayList<Integer> newList= new ArrayList<>();
+        
+        for(int i=0; i<n; i++){
+            int count =0;
+            int curr=A.get(i);
+            for(int j=0; j<n; j++){
+                if(curr==A.get(j)){
+                    count++;
+                }
+            }
+            if(count==1){
+                newList.add(curr);
+            }
+        }
+        Collections.sort(newList);
+        return newList;
+    }
+}
